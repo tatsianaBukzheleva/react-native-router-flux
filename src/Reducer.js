@@ -233,7 +233,17 @@ function inject(state, action, props, scenes) {
         const rState = resetHistoryStack(state);
         newState = { ...rState, index: ind };
       }
+
       return newState;
+
+      // state.children[ind] = getInitialState(
+      //   props,
+      //   scenes,
+      //   state.index,
+      //   { ...action, parentIndex: state.children[ind].parentIndex },
+      // );
+      //
+      // return { ...state, index: ind };
     }
     case ActionConst.REPLACE:
       if (state.children[state.index].sceneKey === action.key) {
@@ -254,7 +264,7 @@ function inject(state, action, props, scenes) {
       }
 
       state.children = state.children.splice(0, 1);
-      state.children[0] = getInitialState(props, scenes, state.index, action);
+      state.children[0] = getInitialState(props, scenes, 0, action);
 
       return {
         ...state,

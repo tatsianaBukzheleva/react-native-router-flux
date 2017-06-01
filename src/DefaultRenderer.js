@@ -7,7 +7,7 @@
  *
  */
 import React, {
-  Component,
+  PureComponent,
   PropTypes,
 } from 'react';
 import {
@@ -17,7 +17,6 @@ import {
   Dimensions,
 } from 'react-native';
 import NavigationExperimental from 'react-native-experimental-navigation';
-import PureRenderMixin from 'react-addons-pure-render-mixin';
 
 import TabBar from './TabBar';
 import NavBar from './NavBar';
@@ -99,7 +98,7 @@ function leftToRight(/* NavigationSceneRendererProps */ props) {
   };
 }
 
-export default class DefaultRenderer extends Component {
+export default class DefaultRenderer extends PureComponent {
 
   static propTypes = {
     navigationState: PropTypes.object,
@@ -211,7 +210,6 @@ export default class DefaultRenderer extends Component {
       direction,
       animation,
       getSceneStyle,
-      getPanHandlers,
     } = props.scene.navigationState;
 
     const state = props.navigationState;
@@ -220,7 +218,11 @@ export default class DefaultRenderer extends Component {
     while ({}.hasOwnProperty.call(selected, 'children')) {
       selected = selected.children[selected.index];
     }
-    let { panHandlers, animationStyle } = selected;
+
+    const { getPanHandlers } = selected;
+    let { panHandlers } = selected;
+    let { animationStyle } = props.scene.navigationState;
+
     const isActive = child === selected;
     const computedProps = { isActive };
     if (isActive) {
@@ -255,12 +257,6 @@ export default class DefaultRenderer extends Component {
         renderScene={DefaultRenderer.renderScene}
       />
     );
-  }
-
-  constructor(props) {
-    super(props);
-
-    this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
   }
 
   getChildContext() {
