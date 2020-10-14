@@ -64,7 +64,7 @@
     "babel-preset-stage-0": "^6.22.0",
     "jest": "19.0.1",
     "react-test-renderer": "15.4.2",
-    "prop-types": "^15.7.2",
+    "prop-types": "^15.7.2"
   },
   "jest": {
     "preset": "react-native"
