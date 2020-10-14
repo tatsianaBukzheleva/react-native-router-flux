@@ -7,7 +7,7 @@
  *
  */
 import React from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import { ViewPropTypes, Text } from 'react-native';
 
 export default class extends React.Component {
