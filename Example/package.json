@@ -8,11 +8,11 @@
     "jest": "jest"
   },
   "dependencies": {
-    "react": "16.0.0-alpha.6",
-    "react-native": "0.44.0",
+    "react": "^16.4.1",
+    "react-native": "^0.44.0",
     "react-native-button": "^1.8.2",
     "react-native-drawer": "^2.3.0",
-    "react-native-router-flux": "^3.39.1"
+    "react-native-router-flux": "https://github.com/tatsianaBukzheleva/react-native-router-flux"
   },
   "devDependencies": {
     "babel-jest": "19.0.0",
@@ -22,7 +22,7 @@
     "react-test-renderer": "~15.4.1",
     "lodash.isequal": "^4.5.0",
     "react-addons-pure-render-mixin": "^15.4.2",
-    "react-dom": "^15.4.2",
+    "react-dom": "^16.4.1",
     "react-native-experimental-navigation": "0.26.x",
     "react-native-tabs": "^1.0.9",
     "react-static-container": "1.0.1"
