@@ -253,7 +253,7 @@ function inject(state, action, props, scenes) {
         return state;
       }
 
-      state.children = state.children.splice(0, 1);
+//       state.children = state.children.splice(0, 1);
       state.children[0] = getInitialState(props, scenes, 0, action);
 
       return {
