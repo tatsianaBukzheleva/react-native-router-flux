@@ -55,7 +55,7 @@ class Router extends Component {
     BackHandler.addEventListener('hardwareBackPress', this.handleBackAndroid);
   }
 
-  componentWillReceiveProps(props) {
+  UNSAFE_componentWillReceiveProps(props) {
     const reducer = this.handleProps(props);
     this.setState({ reducer });
   }
