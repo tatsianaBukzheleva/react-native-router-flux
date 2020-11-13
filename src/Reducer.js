@@ -252,8 +252,8 @@ function inject(state, action, props, scenes) {
       if (state.children[state.index].sceneKey === action.key) {
         return state;
       }
-
-//       state.children = state.children.splice(0, 1);
+// May be need to fix
+      state.children = state.children.splice(0, 1);
       state.children[0] = getInitialState(props, scenes, 0, action);
 
       return {
